@@ -25,7 +25,27 @@
         // new map
         let map = new google.maps.Map(document.getElementById("map"), options);
 
-        addMarker({
+        // array of markers
+        let markers = [
+          {
+            coords: { lat: 43.615, lng: -116.2023 },
+            iconImage:
+              "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+            content: "<h1>Boise, Idaho</h1>",
+          },
+          {
+            coords: { lat: 43.5788, lng: -116.5598 },
+            content: "<h1>Nampa, Idaho</h1>",
+          },
+          { coords: { lat: 43.6629, lng: -116.6874 } },
+        ];
+
+        // loop through markers
+        markers.forEach(function (marker) {
+          addMarker(marker);
+        });
+
+        /* addMarker({
           coords: { lat: 43.615, lng: -116.2023 },
           iconImage:
             "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
@@ -35,7 +55,7 @@
           coords: { lat: 43.5788, lng: -116.5598 },
           content: "<h1>Nampa, Idaho</h1>",
         });
-        addMarker({ coords: { lat: 43.6629, lng: -116.6874 } });
+        addMarker({ coords: { lat: 43.6629, lng: -116.6874 } }); */
 
         // add marker function
         function addMarker(props) {
