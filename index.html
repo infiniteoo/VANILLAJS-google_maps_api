@@ -25,6 +25,12 @@
         // new map
         let map = new google.maps.Map(document.getElementById("map"), options);
 
+        // listen for click on map
+        map.addListener("click", function (event) {
+          // add marker
+          addMarker({ coords: event.latLng });
+        });
+
         // array of markers
         let markers = [
           {
