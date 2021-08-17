@@ -26,10 +26,19 @@
         let map = new google.maps.Map(document.getElementById("map"), options);
 
         // add marker
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
           position: { lat: 43.615, lng: -116.2023 },
           map: map,
           icon: "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png",
+        });
+
+        // info window
+        let infoWindow = new google.maps.InfoWindow({
+          content: "<h1>Boise, ID</h1>",
+        });
+
+        marker.addListener("click", function () {
+          infoWindow.open(map, marker);
         });
       }
     </script>
